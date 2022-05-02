@@ -1,1 +1,1 @@
-# tsurai_bot
+# tsurai-bot
