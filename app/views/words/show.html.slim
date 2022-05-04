@@ -1,9 +1,9 @@
 = javascript_pack_tag "top"
 
-.m-4
-  .container.text-center.py-2
+.my-5.mx-2
+  .text-center
     h2.mb-3.= '「つらい」で押韻！'
-    p.mb-2= '「つらい」で韻を踏む言葉を作ってみましょう。'
+    p.mb-2= '「つらい」で韻を踏む言葉を作りましょう！'
     p.small.mb-3.text-muted= '※不愉快な文面が表示されることがあるので、苦手な方は遊ばないようにしてください'
     .my-3
       .d-flex.justify-content-center.mb-2
@@ -24,7 +24,7 @@
         span#mi.btn.btn-dark.m-2= 'み'
         span#ti.btn.btn-dark.m-2= 'ち'
 
-    .mb-5
+    .mb-3
       = form_tag '/words/show', method: :get do
         .d-flex.justify-content-center.mb-4
           .mx-2= text_field_tag :word_1, nil, maxlength: 1, size: 1, class: 'p-3'
@@ -34,5 +34,5 @@
           = submit_tag '確定', class: "btn btn-primary m-2", id: "decide"
           submit#clear.btn.btn-secondary.m-2= 'クリア'
     div
-      h2.m-4.text-danger= @word.text
+      h2.mb-3.text-danger= @word.text
       h4= @word.message
