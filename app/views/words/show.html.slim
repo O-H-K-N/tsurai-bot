@@ -1,0 +1,40 @@
+= javascript_pack_tag "top"
+
+.my-5.mx-2
+  .text-center
+    h2.mb-3.= '「つらい」で押韻！'
+    p.mb-2= '「つらい」で韻を踏むつらい言葉を作りましょう！'
+    p.small.mb-1.text-danger
+      u= 'ポジティブな言葉はハズレ扱いとなります'
+    p.small.mb-3.text-muted= '※不愉快な文面が表示されることがあるので、苦手な方は遊ばないようにしてください'
+    .my-3
+      .d-flex.justify-content-center.mb-2
+        span#u.btn.btn-dark.m-2= 'う'
+        span#tsu.btn.btn-dark.m-2= 'つ'
+        span#ku.btn.btn-dark.m-2= 'く'
+        span#fu.btn.btn-dark.m-2= 'ふ'
+        span#mu.btn.btn-dark.m-2= 'む'
+        span#ru.btn.btn-dark.m-2= 'る'
+      .d-flex.justify-content-center.mb-2
+        span#sa.btn.btn-dark.m-2= 'さ'
+        span#ra.btn.btn-dark.m-2= 'ら'
+        span#ka.btn.btn-dark.m-2= 'か'
+        span#ha.btn.btn-dark.m-2= 'は'
+        span#za.btn.btn-dark.m-2= 'ざ'
+      .d-flex.justify-content-center.mb-2
+        span#i.btn.btn-dark.m-2= 'い'
+        span#mi.btn.btn-dark.m-2= 'み'
+        span#ti.btn.btn-dark.m-2= 'ち'
+
+    .mb-3
+      = form_tag '/words/show', method: :get do
+        .d-flex.justify-content-center.mb-4
+          .mx-2= text_field_tag :word_1, nil, maxlength: 1, size: 1, class: 'p-3'
+          .mx-2= text_field_tag :word_2, nil, maxlength: 1, size: 1, class: 'p-3'
+          .mx-2= text_field_tag :word_3, nil, maxlength: 1, size: 1, class: 'p-3'
+        .d-flex.justify-content-center
+          = submit_tag '確定', class: "btn btn-primary m-2", id: "decide"
+          submit#clear.btn.btn-secondary.m-2= 'クリア'
+    div
+      h2.mb-3.text-danger= @word.text
+      h4= @word.message
